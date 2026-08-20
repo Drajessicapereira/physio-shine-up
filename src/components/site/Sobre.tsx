@@ -51,9 +51,6 @@ export function Sobre() {
             respeito e na individualidade de cada paciente, contribuindo para mais saúde,
             funcionalidade, independência e qualidade de vida.”
           </blockquote>
-          <p className="mt-4 text-sm text-muted-foreground">
-            CREFITO 422201-F · CREF 152902-G/SP
-          </p>
         </div>
       </div>
     </section>
