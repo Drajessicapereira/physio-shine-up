@@ -28,20 +28,22 @@ export const Route = createFileRoute("/")({
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESCRIPTION },
       { property: "og:type", content: "website" },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: SITE_URL },
       { property: "og:locale", content: "pt_BR" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [{ rel: "canonical", href: SITE_URL }],
     scripts: [
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
-          "@type": "Physiotherapy",
+          "@type": "MedicalBusiness",
+          "@id": `${SITE_URL}/#business`,
           name: "Dra. Jéssica Macedo Pereira — Fisioterapia Domiciliar",
+          url: SITE_URL,
           description: DESCRIPTION,
           telephone: `+55${PHONE_DISPLAY.replace(/\D/g, "")}`,
           sameAs: [INSTAGRAM],
@@ -75,6 +77,7 @@ export const Route = createFileRoute("/")({
   }),
   component: HomePage,
 });
+
 
 function HomePage() {
   return (
