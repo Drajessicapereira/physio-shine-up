@@ -40,11 +40,7 @@ export function Hero() {
             </a>
           </div>
 
-          <ul className="mt-8 grid gap-3 text-sm text-muted-foreground sm:grid-cols-3">
-            <li className="flex items-center gap-2">
-              <ShieldCheck className="h-4 w-4 text-primary" aria-hidden="true" />
-              CREFITO 422201-F
-            </li>
+          <ul className="mt-8 grid gap-3 text-sm text-muted-foreground sm:grid-cols-2">
             <li className="flex items-center gap-2">
               <Clock className="h-4 w-4 text-primary" aria-hidden="true" />
               Horários flexíveis
