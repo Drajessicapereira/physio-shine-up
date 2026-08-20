@@ -87,8 +87,10 @@ function HomePage() {
         <Hero />
         <Sobre />
         <Servicos />
+        <ComoFunciona />
         <Beneficios />
         <AntesDepois />
+        <Depoimentos />
         <Profissionais />
         <Duvidas />
         <Contato />
@@ -98,3 +100,4 @@ function HomePage() {
     </div>
   );
 }
+
