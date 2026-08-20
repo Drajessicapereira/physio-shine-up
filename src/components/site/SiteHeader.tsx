@@ -22,7 +22,7 @@ export function SiteHeader() {
           <img
             src={logo}
             alt="Logotipo da Dra. Jéssica Macedo Pereira, fisioterapeuta domiciliar"
-            className="h-10 w-auto rounded-md"
+            className="h-12 w-auto rounded-md"
           />
           <span className="sr-only">Dra. Jéssica Macedo Pereira</span>
         </a>
