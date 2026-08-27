@@ -1,25 +1,12 @@
-import { Star, Quote } from "lucide-react";
+import { Star, Quote, ExternalLink } from "lucide-react";
 
-const depoimentos = [
-  {
-    nome: "Maria S.",
-    perfil: "Mãe de paciente pediátrico",
-    texto:
-      "A Dra. Jéssica transformou a rotina do meu filho. Em poucas sessões vimos melhora na coordenação e no equilíbrio. O atendimento em casa fez toda a diferença.",
-  },
-  {
-    nome: "Seu Antônio",
-    perfil: "Paciente geriátrico",
-    texto:
-      "Depois da queda, eu tinha medo de andar sozinho. Com as sessões domiciliares recuperei confiança e mobilidade. Profissional atenciosa e dedicada.",
-  },
-  {
-    nome: "Dra. Fernanda L.",
-    perfil: "Médica da família",
-    texto:
-      "Encaminho pacientes com frequência. O retorno sobre a evolução funcional é claro e ajuda muito no acompanhamento da equipe multidisciplinar.",
-  },
-];
+import { GOOGLE_PROFILE, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/site";
+
+/**
+ * Avaliações reais do perfil da empresa no Google.
+ * Para adicionar/atualizar, cole aqui o nome e o texto de cada avaliação.
+ */
+const avaliacoes: { nome: string; texto: string; nota?: number }[] = [];
 
 export function Depoimentos() {
   return (
@@ -30,33 +17,57 @@ export function Depoimentos() {
           <h2 className="text-2xl text-primary sm:text-3xl">O que dizem sobre o atendimento</h2>
         </div>
         <p className="mt-3 max-w-2xl text-base text-muted-foreground">
-          Relatos de pacientes e profissionais que acompanharam a evolução do tratamento.
+          Avaliações reais de pacientes e familiares publicadas no perfil do Google.
         </p>
 
-        <ul className="mt-8 grid gap-5 sm:grid-cols-3">
-          {depoimentos.map(({ nome, perfil, texto }) => (
-            <li
-              key={nome}
-              className="rounded-2xl border border-border bg-card p-6 shadow-sm"
-            >
-              <div className="flex gap-0.5 text-primary" aria-label="5 estrelas">
+        <div className="mt-8 flex flex-col gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex items-center gap-4">
+            <p className="text-4xl font-semibold text-primary">
+              {GOOGLE_RATING.toLocaleString("pt-BR", { minimumFractionDigits: 1 })}
+            </p>
+            <div>
+              <div
+                className="flex gap-0.5 text-primary"
+                aria-label={`Nota ${GOOGLE_RATING} de 5 no Google`}
+              >
                 {Array.from({ length: 5 }).map((_, i) => (
                   <Star key={i} className="h-4 w-4 fill-current" aria-hidden="true" />
                 ))}
               </div>
-              <blockquote className="mt-4 text-sm leading-relaxed text-foreground">
-                “{texto}”
-              </blockquote>
-              <p className="mt-4 text-sm font-semibold text-foreground">{nome}</p>
-              <p className="text-xs text-muted-foreground">{perfil}</p>
-            </li>
-          ))}
-        </ul>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {GOOGLE_REVIEW_COUNT} avaliações no Google
+              </p>
+            </div>
+          </div>
+          <a
+            href={GOOGLE_PROFILE}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 rounded-full border border-primary px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+          >
+            Ver avaliações no Google
+            <ExternalLink className="h-4 w-4" aria-hidden="true" />
+          </a>
+        </div>
 
-        <p className="mt-6 text-xs text-muted-foreground">
-          * Depoimentos ilustrativos. Substitua por relatos reais de pacientes e responsáveis, com
-          autorização para divulgação.
-        </p>
+        {avaliacoes.length > 0 && (
+          <ul className="mt-6 grid gap-5 sm:grid-cols-3">
+            {avaliacoes.map(({ nome, texto, nota = 5 }) => (
+              <li key={nome} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
+                <div className="flex gap-0.5 text-primary" aria-label={`${nota} estrelas`}>
+                  {Array.from({ length: nota }).map((_, i) => (
+                    <Star key={i} className="h-4 w-4 fill-current" aria-hidden="true" />
+                  ))}
+                </div>
+                <blockquote className="mt-4 text-sm leading-relaxed text-foreground">
+                  “{texto}”
+                </blockquote>
+                <p className="mt-4 text-sm font-semibold text-foreground">{nome}</p>
+                <p className="text-xs text-muted-foreground">Avaliação no Google</p>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </section>
   );
