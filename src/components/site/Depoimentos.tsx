@@ -6,7 +6,36 @@ import { GOOGLE_PROFILE, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/site";
  * Avaliações reais do perfil da empresa no Google.
  * Para adicionar/atualizar, cole aqui o nome e o texto de cada avaliação.
  */
-const avaliacoes: { nome: string; texto: string; nota?: number }[] = [];
+const avaliacoes: { nome: string; texto: string; subtitulo: string; nota?: number }[] = [
+  {
+    nome: "Débora Caroline",
+    subtitulo: "3 avaliações · um mês atrás",
+    nota: 5,
+    texto:
+      "Excelente profissional! Muito atenciosa, cuidadosa e extremamente competente. Desde a primeira consulta me senti acolhida e segura. Explica tudo com clareza, respeita o tempo do paciente e demonstra um conhecimento incrível. O atendimento é humanizado e faz toda a diferença no tratamento. Sou muito grata pelo cuidado, dedicação e carinho. Recomendo de olhos fechados!",
+  },
+  {
+    nome: "Letícia Anitelli",
+    subtitulo: "9 avaliações · um mês atrás",
+    nota: 5,
+    texto:
+      "Excelente profissional, muito dedicada e atenciosa com os pacientes! Recomendo de olhos fechados!!!",
+  },
+  {
+    nome: "Marcos Cesar Severnini",
+    subtitulo: "6 avaliações · um mês atrás",
+    nota: 5,
+    texto:
+      "Foi uma experiência muito boa: nunca mais senti aquela dor insuportável na lombar! Recomendo com 5 estrelas!!!",
+  },
+  {
+    nome: "Khaue Ribeiro",
+    subtitulo: "Local Guide · 38 avaliações · uma semana atrás",
+    nota: 5,
+    texto:
+      "Sem palavras pra agradecer a Dra. Jessica Pereira! Estava com Paralisia de Bell e em 2 semanas de fisioterapia já vi resultado. Com 1 mês estou praticamente 100% recuperado. Profissional excelente, atenciosa e muito competente. Recomendo de olhos fechados p/ quem precisar de fisioterapia em Hortolândia e Região",
+  },
+];
 
 export function Depoimentos() {
   return (
