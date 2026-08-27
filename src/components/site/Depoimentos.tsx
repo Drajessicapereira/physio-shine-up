@@ -80,19 +80,19 @@ export function Depoimentos() {
         </div>
 
         {avaliacoes.length > 0 && (
-          <ul className="mt-6 grid gap-5 sm:grid-cols-3">
-            {avaliacoes.map(({ nome, texto, nota = 5 }) => (
+          <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {avaliacoes.map(({ nome, subtitulo, texto, nota = 5 }) => (
               <li key={nome} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
-                <div className="flex gap-0.5 text-primary" aria-label={`${nota} estrelas`}>
+                <div className="flex gap-0.5 text-primary" aria-label={`${nota} de 5 estrelas`}>
                   {Array.from({ length: nota }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-current" aria-hidden="true" />
                   ))}
                 </div>
                 <blockquote className="mt-4 text-sm leading-relaxed text-foreground">
-                  “{texto}”
+                  "{texto}"
                 </blockquote>
                 <p className="mt-4 text-sm font-semibold text-foreground">{nome}</p>
-                <p className="text-xs text-muted-foreground">Avaliação no Google</p>
+                <p className="text-xs text-muted-foreground">{subtitulo}</p>
               </li>
             ))}
           </ul>
