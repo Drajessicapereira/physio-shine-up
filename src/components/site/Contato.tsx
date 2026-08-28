@@ -39,6 +39,12 @@ export function Contato() {
               </a>
             </li>
             <li className="flex items-center gap-3">
+              <Mail className="h-4 w-4 text-primary" aria-hidden="true" />
+              <a href={MAILTO_LINK} className="font-semibold text-foreground hover:text-primary">
+                {EMAIL}
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
               <MapPin className="h-4 w-4 text-primary" aria-hidden="true" />
               <span className="text-muted-foreground">{CITY}</span>
             </li>
