@@ -79,6 +79,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Dra. Jéssica Macedo Pereira | Fisioterapia Domiciliar" },
       {
+        name: "google-site-verification",
+        content: "hbQVpphGmbH13RB5OHZy9hUZBA0kC0Mg_MHleJcHUXI",
+      },
+      {
         name: "description",
         content:
           "Fisioterapia domiciliar humanizada em Hortolândia/SP para crianças, adultos e idosos.",
