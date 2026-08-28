@@ -54,6 +54,13 @@ export const Route = createFileRoute("/")({
           telephone: `+55${PHONE_DISPLAY.replace(/\D/g, "")}`,
           sameAs: [INSTAGRAM],
           medicalSpecialty: "Physiotherapy",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: GOOGLE_RATING,
+            reviewCount: GOOGLE_REVIEW_COUNT,
+            bestRating: 5,
+            worstRating: 1,
+          },
           areaServed: [
             { "@type": "City", name: "Hortolândia" },
             { "@type": "AdministrativeArea", name: "Região Metropolitana de Campinas" },
