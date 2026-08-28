@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { MessageCircle, Instagram, MapPin, Phone } from "lucide-react";
-import { INSTAGRAM, PHONE_DISPLAY, CITY, waLink } from "@/lib/site";
+import { MessageCircle, Instagram, MapPin, Phone, Mail } from "lucide-react";
+import { INSTAGRAM, PHONE_DISPLAY, CITY, EMAIL, MAILTO_LINK, waLink } from "@/lib/site";
 
 export function Contato() {
   const [nome, setNome] = useState("");
