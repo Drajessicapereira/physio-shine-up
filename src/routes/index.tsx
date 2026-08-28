@@ -13,7 +13,13 @@ import { Duvidas } from "@/components/site/Duvidas";
 import { Contato } from "@/components/site/Contato";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { WhatsAppFloat } from "@/components/site/WhatsAppFloat";
-import { SITE_URL, INSTAGRAM, PHONE_DISPLAY } from "@/lib/site";
+import {
+  SITE_URL,
+  INSTAGRAM,
+  PHONE_DISPLAY,
+  GOOGLE_RATING,
+  GOOGLE_REVIEW_COUNT,
+} from "@/lib/site";
 
 
 const TITLE = "Fisioterapia Domiciliar em Hortolândia | Dra. Jéssica Pereira";
@@ -48,6 +54,13 @@ export const Route = createFileRoute("/")({
           telephone: `+55${PHONE_DISPLAY.replace(/\D/g, "")}`,
           sameAs: [INSTAGRAM],
           medicalSpecialty: "Physiotherapy",
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: GOOGLE_RATING,
+            reviewCount: GOOGLE_REVIEW_COUNT,
+            bestRating: 5,
+            worstRating: 1,
+          },
           areaServed: [
             { "@type": "City", name: "Hortolândia" },
             { "@type": "AdministrativeArea", name: "Região Metropolitana de Campinas" },

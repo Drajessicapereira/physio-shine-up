@@ -1,4 +1,4 @@
-export const SITE_URL = "https://id-preview--c243f253-82b2-4e5a-8913-da40295dc7da.lovable.app";
+export const SITE_URL = "https://drajessicapereirafisio.com.br";
 
 export const WHATSAPP_NUMBER = "5519998900329";
 
