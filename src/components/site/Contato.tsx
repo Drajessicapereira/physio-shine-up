@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { MessageCircle, Instagram, MapPin, Phone } from "lucide-react";
-import { INSTAGRAM, PHONE_DISPLAY, CITY, waLink } from "@/lib/site";
+import { MessageCircle, Instagram, MapPin, Phone, Mail } from "lucide-react";
+import { INSTAGRAM, PHONE_DISPLAY, CITY, EMAIL, MAILTO_LINK, waLink } from "@/lib/site";
 
 export function Contato() {
   const [nome, setNome] = useState("");
@@ -36,6 +36,12 @@ export function Contato() {
               <Instagram className="h-4 w-4 text-primary" aria-hidden="true" />
               <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer" className="font-semibold text-foreground hover:text-primary">
                 @drajessicapereirafisio
+              </a>
+            </li>
+            <li className="flex items-center gap-3">
+              <Mail className="h-4 w-4 text-primary" aria-hidden="true" />
+              <a href={MAILTO_LINK} className="font-semibold text-foreground hover:text-primary">
+                {EMAIL}
               </a>
             </li>
             <li className="flex items-center gap-3">

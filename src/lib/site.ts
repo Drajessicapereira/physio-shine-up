@@ -14,6 +14,8 @@ export const WA_PROFISSIONAL = waLink(
 );
 
 export const INSTAGRAM = "https://www.instagram.com/drajessicapereirafisio";
+export const EMAIL = "fisiojessicamacpereira@gmail.com";
+export const MAILTO_LINK = `mailto:${EMAIL}`;
 
 export const GOOGLE_PROFILE =
   "https://www.google.com/search?kgmid=/g/11zgc_bz98&q=Dra.+Jessica+Pereira+-+Fisioterapeuta+Domiciliar";
