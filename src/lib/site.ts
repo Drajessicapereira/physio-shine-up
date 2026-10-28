@@ -20,6 +20,6 @@ export const MAILTO_LINK = `mailto:${EMAIL}`;
 export const GOOGLE_PROFILE =
   "https://www.google.com/search?kgmid=/g/11zgc_bz98&q=Dra.+Jessica+Pereira+-+Fisioterapeuta+Domiciliar";
 export const GOOGLE_RATING = 5;
-export const GOOGLE_REVIEW_COUNT = 4;
+export const GOOGLE_REVIEW_COUNT = 5;
 export const PHONE_DISPLAY = "(19) 99890-0329";
 export const CITY = "Hortolândia/SP e região";

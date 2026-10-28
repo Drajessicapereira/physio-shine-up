@@ -8,6 +8,13 @@ import { GOOGLE_PROFILE, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/site";
  */
 const avaliacoes: { nome: string; texto: string; subtitulo: string; nota?: number }[] = [
   {
+    nome: "Adv. Ingrid Reis",
+    subtitulo: "Avaliação no Google · 28/10/2026",
+    nota: 5,
+    texto:
+      "A melhor fisioterapeuta de Hortolândia e região... Eu estou gestante e estava com uma dor absurda na lombar, a Dra. Jéssica colocou o Taping em mim e hoje me sinto outra pessoa, recomendo de olhos fechados!!!",
+  },
+  {
     nome: "Débora Caroline",
     subtitulo: "3 avaliações · um mês atrás",
     nota: 5,
@@ -80,7 +87,7 @@ export function Depoimentos() {
         </div>
 
         {avaliacoes.length > 0 && (
-          <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <ul className="mt-6 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {avaliacoes.map(({ nome, subtitulo, texto, nota = 5 }) => (
               <li key={nome} className="rounded-2xl border border-border bg-card p-6 shadow-sm">
                 <div className="flex gap-0.5 text-primary" aria-label={`${nota} de 5 estrelas`}>
