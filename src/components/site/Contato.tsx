@@ -83,6 +83,7 @@ export function Contato() {
                 <option value="uma criança">Criança</option>
                 <option value="um adulto">Adulto</option>
                 <option value="uma pessoa idosa">Idoso</option>
+                <option value="uma gestante">Gestante</option>
               </select>
             </div>
             <div>
