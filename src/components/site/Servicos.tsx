@@ -40,8 +40,6 @@ const servicos = [
 
 export function Servicos() {
   return (
-
-  return (
     <section id="servicos" className="bg-brand-tint">
       <div className="mx-auto max-w-6xl px-4 py-16">
         <h2 className="text-2xl text-primary sm:text-3xl">Áreas de atuação</h2>
