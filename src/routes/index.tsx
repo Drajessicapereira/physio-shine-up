@@ -78,6 +78,7 @@ export const Route = createFileRoute("/")({
             "Psicomotricidade",
             "Fisioterapia neurológica",
             "Reabilitação de paralisia de Bell",
+            "Bandagem funcional",
           ].map((name) => ({ "@type": "MedicalTherapy", name })),
           founder: {
             "@type": "Person",
