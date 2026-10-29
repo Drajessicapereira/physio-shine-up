@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { GraduationCap, HeartHandshake } from "lucide-react";
 
 const formacao = [
@@ -9,19 +10,60 @@ const formacao = [
 ];
 
 export function Sobre() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const entry = entries[0];
+        if (!entry) return;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {});
+        } else {
+          video.pause();
+        }
+      },
+      { threshold: 0.5 }
+    );
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <section id="sobre" className="mx-auto max-w-6xl px-4 py-16">
       <h2 className="text-2xl text-primary sm:text-3xl">Conheça a Dra. Jéssica</h2>
-      <p className="mt-4 max-w-3xl text-base text-muted-foreground">
-        Fisioterapeuta, educadora física, psicomotricista, especialista em ABA e pós-graduada em
-        Gerontologia. Atende crianças, adultos e idosos em casa, com plano terapêutico individual e
-        cuidado humanizado baseado em evidências científicas.
-      </p>
-      <p className="mt-3 max-w-3xl text-base text-muted-foreground">
-        O foco está em prevenir complicações, recuperar a funcionalidade, estimular o
-        desenvolvimento motor e devolver independência — sempre respeitando o ritmo de cada pessoa e
-        com a família participando do processo.
-      </p>
+
+      <div className="mt-4 grid gap-8 md:grid-cols-[1fr_minmax(0,300px)]">
+        <div>
+          <p className="max-w-3xl text-base text-muted-foreground">
+            Fisioterapeuta, educadora física, psicomotricista, especialista em ABA e pós-graduada em
+            Gerontologia. Atende crianças, adultos e idosos em casa, com plano terapêutico
+            individual e cuidado humanizado baseado em evidências científicas.
+          </p>
+          <p className="mt-3 max-w-3xl text-base text-muted-foreground">
+            O foco está em prevenir complicações, recuperar a funcionalidade, estimular o
+            desenvolvimento motor e devolver independência — sempre respeitando o ritmo de cada
+            pessoa e com a família participando do processo.
+          </p>
+        </div>
+
+        <video
+          ref={videoRef}
+          className="w-full justify-self-center rounded-2xl shadow-md"
+          style={{ aspectRatio: "9 / 16" }}
+          src="/bandagem-funcional.mp4"
+          poster="/bandagem-funcional-poster.jpg"
+          controls
+          playsInline
+          muted
+          autoPlay
+          preload="metadata"
+          aria-label="Vídeo da Dra. Jéssica apresentando seu trabalho"
+        />
+      </div>
 
       <div className="mt-8 grid gap-5 md:grid-cols-2">
         <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
