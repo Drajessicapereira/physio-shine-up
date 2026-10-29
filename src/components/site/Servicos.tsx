@@ -41,26 +41,6 @@ const servicos = [
 export function Servicos() {
   return (
 
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const entry = entries[0];
-        if (!entry) return;
-        if (entry.isIntersecting) {
-          video.play().catch(() => {});
-        } else {
-          video.pause();
-        }
-      },
-      { threshold: 0.5 }
-    );
-    observer.observe(video);
-    return () => observer.disconnect();
-  }, []);
-
   return (
     <section id="servicos" className="bg-brand-tint">
       <div className="mx-auto max-w-6xl px-4 py-16">
