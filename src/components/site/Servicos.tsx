@@ -1,6 +1,4 @@
 import { Baby, PersonStanding, Activity, Brain, Puzzle, Smile, Bandage } from "lucide-react";
-import bandagemVideo from "@/assets/bandagem-funcional.mp4.asset.json";
-import bandagemPoster from "@/assets/bandagem-funcional-poster.jpg.asset.json";
 
 const servicos = [
   {
