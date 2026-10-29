@@ -47,7 +47,9 @@ export function Servicos() {
     if (!video) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => {
+      (entries) => {
+        const entry = entries[0];
+        if (!entry) return;
         if (entry.isIntersecting) {
           video.play().catch(() => {});
         } else {
