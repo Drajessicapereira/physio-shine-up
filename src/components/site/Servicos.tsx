@@ -1,4 +1,3 @@
-import { useEffect, useRef } from "react";
 import { Baby, PersonStanding, Activity, Brain, Puzzle, Smile, Bandage } from "lucide-react";
 
 const servicos = [
@@ -40,7 +39,7 @@ const servicos = [
 ];
 
 export function Servicos() {
-  const videoRef = useRef<HTMLVideoElement>(null);
+  return (
 
   useEffect(() => {
     const video = videoRef.current;
