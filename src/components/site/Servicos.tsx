@@ -86,13 +86,16 @@ export function Servicos() {
 
         <div className="mt-12 grid items-center gap-8 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8 lg:grid-cols-[minmax(0,340px)_1fr]">
           <video
+            ref={videoRef}
             className="w-full rounded-xl shadow-md"
             style={{ aspectRatio: "9 / 16" }}
             src="/bandagem-funcional.mp4"
             poster="/bandagem-funcional-poster.jpg"
             controls
             playsInline
-            preload="none"
+            muted
+            autoPlay
+            preload="metadata"
             aria-label="Vídeo demonstrando aplicação de bandagem funcional"
           />
           <div>
