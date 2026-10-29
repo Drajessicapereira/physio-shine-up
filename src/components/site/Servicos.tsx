@@ -1,4 +1,6 @@
-import { Baby, PersonStanding, Activity, Brain, Puzzle, Smile } from "lucide-react";
+import { Baby, PersonStanding, Activity, Brain, Puzzle, Smile, Bandage } from "lucide-react";
+import bandagemVideo from "@/assets/bandagem-funcional.mp4.asset.json";
+import bandagemPoster from "@/assets/bandagem-funcional-poster.jpg.asset.json";
 
 const servicos = [
   {
@@ -31,6 +33,11 @@ const servicos = [
     title: "Paralisia de Bell",
     text: "Reabilitação facial para recuperar movimento, simetria e funcionalidade.",
   },
+  {
+    icon: Bandage,
+    title: "Bandagem funcional",
+    text: "Aplicação de bandagem funcional na gestação, pós-parto e reabilitação ortopédica.",
+  },
 ];
 
 export function Servicos() {
@@ -57,6 +64,47 @@ export function Servicos() {
             </li>
           ))}
         </ul>
+
+        <div className="mt-12 grid items-center gap-8 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8 lg:grid-cols-[minmax(0,340px)_1fr]">
+          <video
+            className="w-full rounded-xl shadow-md"
+            style={{ aspectRatio: "9 / 16" }}
+            src={bandagemVideo.url}
+            poster={bandagemPoster.url}
+            controls
+            playsInline
+            preload="none"
+            aria-label="Vídeo demonstrando aplicação de bandagem funcional"
+          />
+          <div>
+            <span className="inline-flex h-11 w-11 items-center justify-center rounded-xl bg-secondary">
+              <Bandage className="h-5 w-5 text-primary" aria-hidden="true" />
+            </span>
+            <h3 className="mt-4 text-xl text-foreground">Bandagem funcional na prática</h3>
+            <p className="mt-3 text-sm text-muted-foreground sm:text-base">
+              A bandagem funcional é uma técnica que oferece suporte e alívio sem restringir os
+              movimentos do dia a dia. Ela pode ser aplicada em diferentes fases do cuidado:
+            </p>
+            <ul className="mt-4 space-y-2 text-sm text-muted-foreground sm:text-base">
+              <li className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                Gestação — alívio de dores lombar e pélvica e suporte à postura.
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                Pós-parto — reeducação postural e apoio à recuperação do corpo.
+              </li>
+              <li className="flex gap-2">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                Reabilitação ortopédica — estabilidade, redução de edema e retorno às atividades.
+              </li>
+            </ul>
+            <p className="mt-4 text-sm text-muted-foreground">
+              A técnica é indicada após avaliação individual, dentro do plano de tratamento de cada
+              paciente.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
