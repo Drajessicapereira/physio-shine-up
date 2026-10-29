@@ -67,8 +67,8 @@ export function Servicos() {
           <video
             className="w-full rounded-xl shadow-md"
             style={{ aspectRatio: "9 / 16" }}
-            src={bandagemVideo.url}
-            poster={bandagemPoster.url}
+            src="/bandagem-funcional.mp4"
+            poster="/bandagem-funcional-poster.jpg"
             controls
             playsInline
             preload="none"
