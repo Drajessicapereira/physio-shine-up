@@ -38,12 +38,12 @@ export function Sobre() {
 
       <div className="mt-4">
         <div>
-          <p className="max-w-3xl text-base text-muted-foreground">
+          <p className="text-pretty text-base leading-relaxed text-muted-foreground sm:text-justify">
             Fisioterapeuta, educadora física, psicomotricista, especialista em ABA e pós-graduada em
             Gerontologia. Atende crianças, adultos e idosos em casa, com plano terapêutico
             individual e cuidado humanizado baseado em evidências científicas.
           </p>
-          <p className="mt-3 max-w-3xl text-base text-muted-foreground">
+          <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground sm:text-justify">
             O foco está em prevenir complicações, recuperar a funcionalidade, estimular o
             desenvolvimento motor e devolver independência — sempre respeitando o ritmo de cada
             pessoa e com a família participando do processo.
