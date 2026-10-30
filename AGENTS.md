@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Keep patient reviews as a verified static snapshot of Google Business Profile data; use original publication dates rather than relative labels to prevent dates drifting over time.
