@@ -36,7 +36,7 @@ export function Sobre() {
     <section id="sobre" className="mx-auto max-w-6xl px-4 py-16">
       <h2 className="text-2xl text-primary sm:text-3xl">Conheça a Dra. Jéssica</h2>
 
-      <div className="mt-4 grid gap-8 md:grid-cols-[1fr_minmax(0,300px)]">
+      <div className="mt-4">
         <div>
           <p className="max-w-3xl text-base text-muted-foreground">
             Fisioterapeuta, educadora física, psicomotricista, especialista em ABA e pós-graduada em
@@ -52,14 +52,12 @@ export function Sobre() {
 
         <video
           ref={videoRef}
-          className="w-full justify-self-center rounded-2xl shadow-md"
-          style={{ aspectRatio: "9 / 16" }}
+          className="mx-auto mt-8 aspect-[9/16] w-full max-w-[300px] rounded-2xl shadow-md"
           src="/bandagem-funcional.mp4"
           poster="/bandagem-funcional-poster.jpg"
           controls
           playsInline
           muted
-          autoPlay
           preload="metadata"
           aria-label="Vídeo da Dra. Jéssica apresentando seu trabalho"
         />
