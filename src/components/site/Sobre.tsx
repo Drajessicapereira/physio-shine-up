@@ -52,7 +52,7 @@ export function Sobre() {
 
         <video
           ref={videoRef}
-          className="mt-8 aspect-video w-full rounded-2xl bg-secondary object-contain shadow-md"
+          className="mx-auto mt-8 aspect-[9/16] w-full max-w-[300px] rounded-2xl shadow-md"
           src="/bandagem-funcional.mp4"
           poster="/bandagem-funcional-poster.jpg"
           controls
