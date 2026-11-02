@@ -12,7 +12,7 @@ export function Hero() {
             {CITY}
           </p>
           <h1 className="mt-4 text-3xl leading-tight text-foreground sm:text-4xl lg:text-5xl">
-            Fisioterapia domiciliar em Hortolândia para crianças, adultos e idosos
+            Fisioterapia domiciliar para crianças, adultos e idosos
           </h1>
           <p className="mt-4 max-w-xl text-base text-muted-foreground sm:text-lg">
             Atendimento individualizado na sua casa: mais movimento, mais autonomia e menos
