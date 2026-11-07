@@ -106,15 +106,6 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
       { rel: "icon", href: "/favicon.png", type: "image/png" },
     ],
-    scripts: [
-      {
-        async: true,
-        src: "https://www.googletagmanager.com/gtag/js?id=AW-18294774608",
-      },
-      {
-        children: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'AW-18294774608');`,
-      },
-    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -126,6 +117,15 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="pt-BR">
       <head>
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18294774608"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.dataLayer = window.dataLayer || [];\nfunction gtag(){dataLayer.push(arguments);}\ngtag('js', new Date());\ngtag('config', 'AW-18294774608');`,
+          }}
+        />
         <HeadContent />
       </head>
       <body>
