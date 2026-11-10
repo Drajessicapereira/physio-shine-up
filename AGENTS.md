@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 
 - Keep patient reviews as a verified static snapshot of Google Business Profile data; use original publication dates rather than relative labels to prevent dates drifting over time.
+- Native WordPress exports use PHP templates, native Customizer settings and local media/fonts, without a React runtime or Lovable dependencies, so the exported site can be maintained independently.
