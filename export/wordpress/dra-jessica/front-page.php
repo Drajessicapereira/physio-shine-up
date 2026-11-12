@@ -89,7 +89,7 @@ $stars      = str_repeat( dj_icon( 'star' ), 5 );
 </section>
 
 <section id="beneficios" class="dj-container dj-section dj-section--tight">
-	<div class="dj-panel">
+	<div>
 		<h2><?php echo esc_html( dj_get( 'beneficios_title' ) ); ?></h2>
 		<ul class="dj-grid dj-grid--3 dj-mt dj-benefits">
 			<?php foreach ( dj_list( 'beneficios_list' ) as $b ) : ?>
