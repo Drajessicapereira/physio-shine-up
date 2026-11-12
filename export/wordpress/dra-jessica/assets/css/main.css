@@ -206,3 +206,4 @@ dd{margin-top:.25rem;font-size:.875rem;color:var(--muted-fg)}
 .dj-prose h2{font-family:var(--display);font-size:1.25rem;margin:1.75rem 0 .5rem}
 .dj-prose p,.dj-prose li{margin:.5rem 0;line-height:1.65}
 .dj-prose ul{padding-left:1.25rem;list-style:disc}
+.dj-footer .dj-footer__links a{display:inline;margin:0}
