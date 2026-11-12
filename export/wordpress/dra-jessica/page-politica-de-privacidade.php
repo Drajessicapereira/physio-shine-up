@@ -30,7 +30,7 @@ $dj_email = dj_get( 'email' );
 			<h2>Seus direitos</h2>
 			<p>Você pode pedir acesso, correção ou exclusão dos seus dados, e tirar dúvidas sobre esta política, pelo e-mail <a href="<?php echo esc_url( 'mailto:' . $dj_email ); ?>"><?php echo esc_html( $dj_email ); ?></a>.</p>
 
-			<p><em>Última atualização: <?php echo esc_html( date_i18n( 'd/m/Y', filemtime( __FILE__ ) ) ); ?>.</em></p>
+			<p><em>Última atualização: 12/11/2026.</em></p>
 		</div>
 	</article>
 </main>
