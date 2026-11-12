@@ -28,6 +28,7 @@ function dj_defaults() {
 		'seo_description'     => 'Fisioterapia domiciliar em Hortolândia/SP para crianças, adultos e idosos: reabilitação motora, neurológica, geriátrica e paralisia de Bell. Agende sua avaliação.',
 		'gsc_verification'    => 'hbQVpphGmbH13RB5OHZy9hUZBA0kC0Mg_MHleJcHUXI',
 		'google_ads_id'       => 'AW-18294774608',
+		'google_ads_wa_label' => '',
 
 		// Início.
 		'hero_title'          => 'Fisioterapia domiciliar para crianças, adultos e idosos',
