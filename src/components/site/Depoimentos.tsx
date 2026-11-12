@@ -8,6 +8,41 @@ import { GOOGLE_PROFILE, GOOGLE_RATING, GOOGLE_REVIEW_COUNT } from "@/lib/site";
  */
 const avaliacoes: { nome: string; texto: string; subtitulo: string; nota?: number }[] = [
   {
+    nome: "Pedro Ferreira",
+    subtitulo: "Avaliação no Google · 11/11/2026",
+    nota: 5,
+    texto:
+      "Quero deixar registrada minha enorme satisfação com o trabalho dessa profissional! Ela foi, sem dúvidas, a melhor escolha que eu poderia ter feito para cuidar do meu pai que tem 93 anos. Meu pai sofreu uma queda, já apresentava dificuldades de equilíbrio e também sentia muitas dores relacionadas ao nervo ciático. Isso comprometia sua segurança e sua qualidade de vida. Desde que iniciou o acompanhamento com ela, tivemos uma evolução maravilhosa! Hoje, meu pai não precisa mais andar se apoiando e também não reclama mais das dores no ciático. Além dos excelentes resultados, destaco o profissionalismo, a dedicação, o carinho e a atenção com que ela conduz cada atendimento. É muito gratificante encontrar uma profissional que realmente ama o que faz e se preocupa com a evolução de seus pacientes. Sou imensamente grato por todo o cuidado e por tudo que ela proporcionou ao meu pai. Recomendo de olhos fechados! Uma profissional excepcional!",
+  },
+  {
+    nome: "Michele Ferreira dos Santos",
+    subtitulo: "Avaliação no Google · 04/11/2026",
+    nota: 5,
+    texto:
+      "A Jéssica cuidou dos joelhos da minha mãe, uma profissional super atenciosa, cuidadosa, eficiente, sabe o que faz com muita dedicação. Muito obrigada pelo cuidado e com o zelo, minha mãe está muito melhor. Indico de olhos fechados.",
+  },
+  {
+    nome: "Alcineia Pereira",
+    subtitulo: "Avaliação no Google · 03/11/2026",
+    nota: 5,
+    texto:
+      "Quero deixar aqui o meu agradecimento mais sincero a essa profissional maravilhosa! A dedicação, o carinho e a paciência dela durante todo o meu tratamento foram fundamentais para a minha recuperação. Eu sentia muita dor no joelho e, graças ao cuidado e à competência dela, hoje estou completamente sem dor. Mais do que uma fisioterapeuta incrível, ela se mostrou uma pessoa humana e iluminada. Sou muito grato por toda a ajuda e recomendo o seu trabalho de todo o coração!",
+  },
+  {
+    nome: "Sergio",
+    subtitulo: "Avaliação no Google · 03/11/2026",
+    nota: 5,
+    texto:
+      "Excelente profissional! Uma fisioterapeuta extremamente dedicada, atenciosa e cuidadosa. Sempre cuidou de mim e da minha esposa com muito carinho, competência e profissionalismo. Transmite confiança em cada atendimento e demonstra um verdadeiro amor pelo que faz. Super recomendo seu trabalho! Uma profissional que faz a diferença! ❤️",
+  },
+  {
+    nome: "Sergio Pereira",
+    subtitulo: "Avaliação no Google · 03/11/2026",
+    nota: 5,
+    texto:
+      "Excelente profissional, recomendo de olhos fechados. Atendimento rápido, tirou todas as minhas dúvidas, além de olha para mim de forma individualizada. Sem dúvidas um dos melhores atendimentos que já tive.",
+  },
+  {
     nome: "Adv. Ingrid Reis",
     subtitulo: "Avaliação no Google · 28/10/2026",
     nota: 5,
