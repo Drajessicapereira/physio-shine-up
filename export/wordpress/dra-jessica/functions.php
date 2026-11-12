@@ -5,7 +5,7 @@
  */
 defined( 'ABSPATH' ) || exit;
 
-define( 'DJ_VERSION', '1.0.0' );
+define( 'DJ_VERSION', '1.1.0' );
 
 require_once get_template_directory() . '/inc/defaults.php';
 require_once get_template_directory() . '/inc/icons.php';
@@ -67,7 +67,8 @@ add_action( 'after_setup_theme', function () {
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'dj-fonts', dj_asset( 'css/fonts.css' ), array(), DJ_VERSION );
 	wp_enqueue_style( 'dj-main', dj_asset( 'css/main.css' ), array( 'dj-fonts' ), DJ_VERSION );
-	wp_enqueue_script( 'dj-main', dj_asset( 'js/main.js' ), array(), DJ_VERSION, array( 'in_footer' => true, 'strategy' => 'defer' ) );
+	wp_enqueue_script( 'dj-consent', dj_asset( 'js/consent.js' ), array(), DJ_VERSION, array( 'in_footer' => true, 'strategy' => 'defer' ) );
+	wp_enqueue_script( 'dj-main', dj_asset( 'js/main.js' ), array( 'dj-consent' ), DJ_VERSION, array( 'in_footer' => true, 'strategy' => 'defer' ) );
 } );
 
 // Remove extras que o site não usa (deixa a página mais leve).
@@ -175,21 +176,81 @@ add_action( 'wp_head', function () {
 	echo '<script type="application/ld+json">' . wp_json_encode( $faq, $flags ) . "</script>\n";
 }, 1 );
 
-/** Tag do Google (gtag.js) — impressa logo após <head>, uma única vez. */
+/** Endereço da Política de Privacidade (página criada pelo tema). */
+function dj_privacy_url() {
+	$id = (int) get_option( 'wp_page_for_privacy_policy' );
+	if ( $id && 'publish' === get_post_status( $id ) ) {
+		return get_permalink( $id );
+	}
+	return home_url( '/politica-de-privacidade/' );
+}
+
+/** Cria a página "Política de Privacidade" uma vez (o texto vem do tema). */
+function dj_ensure_privacy_page() {
+	$page = get_page_by_path( 'politica-de-privacidade' );
+	if ( ! $page ) {
+		$id = wp_insert_post( array(
+			'post_title'   => 'Política de Privacidade',
+			'post_name'    => 'politica-de-privacidade',
+			'post_status'  => 'publish',
+			'post_type'    => 'page',
+			'post_content' => '',
+		) );
+	} else {
+		$id = $page->ID;
+	}
+	if ( $id && ! is_wp_error( $id ) ) {
+		update_option( 'wp_page_for_privacy_policy', (int) $id );
+	}
+	update_option( 'dj_privacy_page_v', 1 );
+}
+add_action( 'after_switch_theme', 'dj_ensure_privacy_page' );
+add_action( 'init', function () {
+	if ( ! get_option( 'dj_privacy_page_v' ) ) {
+		dj_ensure_privacy_page();
+	}
+} );
+
+/**
+ * Tag do Google com consentimento: tudo começa negado e o gtag.js só é
+ * carregado depois que o visitante aceita publicidade no aviso de cookies.
+ */
 function dj_google_tag() {
 	$id = trim( dj_get( 'google_ads_id' ) );
 	if ( ! $id || ! preg_match( '/^[A-Z]{1,3}-[A-Z0-9]+$/', $id ) ) {
 		return;
 	}
+	$label = trim( (string) dj_get( 'google_ads_wa_label' ) );
+	if ( ! preg_match( '/^[A-Za-z0-9_-]+$/', $label ) ) {
+		$label = '';
+	}
+	$cfg = array( 'id' => $id, 'waLabel' => $label );
 	?>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=<?php echo esc_attr( $id ); ?>"></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '<?php echo esc_js( $id ); ?>');
+window.djAds = <?php echo wp_json_encode( $cfg ); ?>;
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', { ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+(function () {
+  var ok = false;
+  try {
+    var s = JSON.parse(localStorage.getItem('cookie_consent_advertising') || 'null');
+    ok = !!(s && s.choice === 'granted' && Date.now() - s.at < 365 * 86400000);
+  } catch (e) {}
+  if (navigator.globalPrivacyControl === true) ok = false;
+  window.djAdsGranted = ok;
+  if (ok) {
+    gtag('consent', 'update', { ad_storage: 'granted', ad_user_data: 'granted', ad_personalization: 'granted' });
+    var t = document.createElement('script');
+    t.async = true;
+    t.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(window.djAds.id);
+    document.head.appendChild(t);
+    window.djAdsLoaded = true;
+  }
+})();
+gtag('set', 'developer_id.dZjgwMW', true);
+gtag('js', new Date());
+gtag('config', '<?php echo esc_js( $id ); ?>');
 </script>
 	<?php
 }

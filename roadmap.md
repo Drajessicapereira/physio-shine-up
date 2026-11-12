@@ -6,3 +6,5 @@
 - [x] Consultar as datas reais de publicação das avaliações e atualizar o site.
 - [x] Gerar um pacote estático atualizado para hospedagem.
 - [x] Reconstruir o tema WordPress nativo, testar e entregar ZIP + guia Locaweb.
+- [x] Tema WordPress: aviso de cookies, Política de Privacidade e conversão de cliques no WhatsApp.
+- [ ] Colar o rótulo da conversão "Clique no WhatsApp" (aguarda a ação criada no Google Ads).

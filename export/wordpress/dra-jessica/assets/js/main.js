@@ -62,6 +62,7 @@
         '. Gostaria de agendar uma avaliação de fisioterapia domiciliar' +
         (para ? ' para ' + para : '') + '.' + (motivo ? ' Motivo: ' + motivo + '.' : '');
       var url = 'https://wa.me/' + form.getAttribute('data-wa') + '?text=' + encodeURIComponent(texto);
+      if (window.djReportWhatsApp) window.djReportWhatsApp();
       window.open(url, '_blank', 'noopener,noreferrer');
     });
   }

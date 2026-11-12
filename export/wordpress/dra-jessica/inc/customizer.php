@@ -25,6 +25,7 @@ function dj_customizer_sections() {
 			'seo_description' => array( 'Descrição no Google', 'textarea' ),
 			'gsc_verification' => array( 'Código de verificação do Google Search Console', 'text' ),
 			'google_ads_id' => array( 'ID da tag do Google Ads (ex.: AW-18294774608)', 'text' ),
+			'google_ads_wa_label' => array( 'Rótulo da conversão "Clique no WhatsApp" (parte depois da barra em send_to, ex.: AbC123xyz)', 'text' ),
 		) ),
 		'dj_hero' => array( 'Início', array(
 			'hero_title' => array( 'Título principal', 'textarea' ),
